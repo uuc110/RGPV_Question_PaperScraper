@@ -1,6 +1,7 @@
 import requests
 from pathlib import Path
 
+
 def download_pdf(url, destination_folder):
     """
     Download a PDF from a given URL and save it to the specified destination folder.
@@ -16,17 +17,22 @@ def download_pdf(url, destination_folder):
     except Exception as e:
         return False, str(e)
 
+
 def generate_and_download_pdfs(base_url, years, months, destination_folder, subjects, branch):
     for year in years:
         for month in months:
             for course_code, course_name in subjects[branch].items():
-                url = base_url.format(branch=branch.lower(), course_code=course_code, course_name=course_name.replace(' ', '-')) + f"-{month}-{year}.pdf"
+                url = base_url.format(branch=branch.lower(), course_code=course_code,
+                                      course_name=course_name.replace(' ', '-')) + f"-{month}-{year}.pdf"
                 subject_folder = Path(destination_folder) / branch / course_code
                 subject_folder.mkdir(parents=True, exist_ok=True)
                 success, message = download_pdf(url, subject_folder)
                 print(url, success, message)
 
+
 # Define subjects directly in the script
+
+# add subject code, subject name and branch ID, below.
 subjects = {
     "it": {
         "501": "operating system",
@@ -38,7 +44,7 @@ subjects = {
     }
 }
 
-# User Input for Branch
+# User Input for Branch or enter the branch name which is in subjects variable above.
 selected_branch = "it"
 
 # Base URL template
