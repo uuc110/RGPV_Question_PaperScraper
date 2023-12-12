@@ -35,12 +35,20 @@ def generate_and_download_pdfs(base_url, years, months, destination_folder, subj
 # add subject code, subject name and branch ID, below.
 subjects = {
     "it": {
-        "501": "operating system",
-        "502": "computer networks",
-        "503": "artificial intelligence",
-        "504": "c java programming",
+        # "501": "operating system",
+        #   "502": "computer networks",
+        # "503": "c object oriented analysis and design",
+        # "504": "c java programming",
         # "5002": "theory of computation",
+        # "404": "analog and digital communication",
+        "7002": "object oriented analysis and design",
+        "701": "object oriented analysis and design",
+        "503": "c object oriented analysis and design",
 
+
+    },
+    "cs-it-ee": {
+        "405": "analog and digital communication",
     }
 }
 
@@ -51,8 +59,8 @@ selected_branch = "it"
 base_url = "https://www.rgpvonline.com/be/{branch}-{course_code}-{course_name}"
 
 # Define the range of years and months
-years = range(2018, 2023)
-months = ["jun", "nov", "dec"]
+years = range(2010, 2022)
+months = ["may", "jun", "nov", "dec"]
 
 # Main destination folder for downloads
 destination_folder = "Output"
