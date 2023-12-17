@@ -1,5 +1,6 @@
 import requests
 from pathlib import Path
+import os
 
 
 def download_pdf(url, destination_folder):
@@ -41,19 +42,24 @@ subjects = {
         # "504": "c java programming",
         # "5002": "theory of computation",
         # "404": "analog and digital communication",
-        "7002": "object oriented analysis and design",
-        "701": "object oriented analysis and design",
-        "503": "c object oriented analysis and design",
-
-
+        # "7002": "object oriented analysis and design",
+        # "701": "object oriented analysis and design",
+        # "503": "c object oriented analysis and design",
+        "504-a" : "artificial intelligence",
+        # "7005-2": "artificial intelligence AI",
+        # "7005-2": "artificial intelligence",
+        # "833": "artificial intelligence",
     },
     "cs-it-ee": {
         "405": "analog and digital communication",
+    },
+    "cs-it": {
+        "702": "artificial intelligence",
     }
 }
 
 # User Input for Branch or enter the branch name which is in subjects variable above.
-selected_branch = "it"
+selected_branches = ["it"]
 
 # Base URL template
 base_url = "https://www.rgpvonline.com/be/{branch}-{course_code}-{course_name}"
@@ -66,4 +72,7 @@ months = ["may", "jun", "nov", "dec"]
 destination_folder = "Output"
 
 # Run the function
-generate_and_download_pdfs(base_url, years, months, destination_folder, subjects, selected_branch)
+for selected_branch in selected_branches:
+    generate_and_download_pdfs(base_url, years, months, destination_folder, subjects, selected_branch)
+
+os.startfile(destination_folder)
