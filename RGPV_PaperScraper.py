@@ -1,78 +1,75 @@
-import requests
+import aiohttp
+import asyncio
 from pathlib import Path
-import os
+import time
 
 
-def download_pdf(url, destination_folder):
+async def download_pdf(session, url, destination_folder):
     """
     Download a PDF from a given URL and save it to the specified destination folder.
     """
     try:
-        response = requests.get(url)
-        response.raise_for_status()  # Check for HTTP errors
-        filename = url.split('/')[-1]
-        file_path = Path(destination_folder) / filename
-        with open(file_path, 'wb') as file:
-            file.write(response.content)
-        return True, f"Downloaded: {file_path}"
+        async with session.get(url) as response:
+            if response.status == 200:
+                filename = url.split("/")[-1]
+                file_path = Path(destination_folder) / filename
+                with open(file_path, "wb") as file:
+                    file.write(await response.read())
+                return True, f"Downloaded: {file_path}"
+            else:
+                return False, f"Failed to download: {url} with status {response.status}"
     except Exception as e:
         return False, str(e)
 
 
-def generate_and_download_pdfs(base_url, years, months, destination_folder, subjects, branch):
-    for year in years:
-        for month in months:
-            for course_code, course_name in subjects[branch].items():
-                url = base_url.format(branch=branch.lower(), course_code=course_code,
-                                      course_name=course_name.replace(' ', '-')) + f"-{month}-{year}.pdf"
-                subject_folder = Path(destination_folder) / branch / course_code
-                subject_folder.mkdir(parents=True, exist_ok=True)
-                success, message = download_pdf(url, subject_folder)
-                print(url, success, message)
+async def generate_and_download_pdfs(
+    base_url, years, months, destination_folder, subjects, branch
+):
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        for year in years:
+            for month in months:
+                for course_code, course_name in subjects[branch].items():
+                    url = (
+                        base_url.format(
+                            branch=branch.lower(),
+                            course_code=course_code,
+                            course_name=course_name.replace(" ", "-"),
+                        )
+                        + f"-{month}-{year}.pdf"
+                    )
+                    subject_folder = Path(destination_folder) / branch / course_code
+                    subject_folder.mkdir(parents=True, exist_ok=True)
+                    tasks.append(download_pdf(session, url, subject_folder))
 
+        results = await asyncio.gather(*tasks)
+        for task, (success, message) in zip(tasks, results):
+            print(success, message)
 
-# Define subjects directly in the script
-
-# add subject code, subject name and branch ID, below.
-subjects = {
-    "it": {
-        # "501": "operating system",
-        #   "502": "computer networks",
-        # "503": "c object oriented analysis and design",
-        # "504": "c java programming",
-        # "5002": "theory of computation",
-        # "404": "analog and digital communication",
-        # "7002": "object oriented analysis and design",
-        # "701": "object oriented analysis and design",
-        # "503": "c object oriented analysis and design",
-        "504-a" : "artificial intelligence",
-        # "7005-2": "artificial intelligence AI",
-        # "7005-2": "artificial intelligence",
-        # "833": "artificial intelligence",
-    },
-    "cs-it-ee": {
-        "405": "analog and digital communication",
-    },
-    "cs-it": {
-        "702": "artificial intelligence",
-    }
-}
-
-# User Input for Branch or enter the branch name which is in subjects variable above.
-selected_branches = ["it"]
-
-# Base URL template
-base_url = "https://www.rgpvonline.com/be/{branch}-{course_code}-{course_name}"
-
-# Define the range of years and months
-years = range(2010, 2022)
-months = ["may", "jun", "nov", "dec"]
-
-# Main destination folder for downloads
-destination_folder = "Output"
 
 # Run the function
-for selected_branch in selected_branches:
-    generate_and_download_pdfs(base_url, years, months, destination_folder, subjects, selected_branch)
+async def main():
+    base_url = "https://www.rgpvonline.com/be/{branch}-{course_code}-{course_name}"
+    years = range(2011, 2024)
+    months = ["may", "jun", "nov", "dec"]
+    destination_folder = "Output"
+    subjects = {
+        "it": {
+            "701": "soft computing",
+            "802": "soft computing",
+            "8002": "soft computing",
+        },
+    }
+    selected_branches = ["it"]
 
-os.startfile(destination_folder)
+    for selected_branch in selected_branches:
+        await generate_and_download_pdfs(
+            base_url, years, months, destination_folder, subjects, selected_branch
+        )
+
+
+# Measure the time taken for the aiohttp implementation
+start_time = time.time()
+asyncio.run(main())
+end_time = time.time()
+print(f"aiohttp implementation took {end_time - start_time:.2f} seconds")
