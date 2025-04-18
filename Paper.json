@@ -1,0 +1,235 @@
+{
+  "questionbank": {
+    "Information Security": {
+      "2012": {
+        "1": [
+          "Write algorithm, draw flowchart and also write a program in C++ for one time pad cipher.",
+          "Explain DES algorithm with the help of diagrams.",
+          "Explain Block cipher modes of operation which use encryption and decryption.",
+          "Differentiate between Block cipher and stream cipher, Diffusion and confusion."
+        ],
+        "2": [
+          "Write short notes on Hash value, Birthday attack, Meet-in-the-middle attacks.",
+          "Explain Euclidean algorithm and solve gcd(1970, 1066) and gcd(24140, 16762).",
+          "Explain characteristics of a secure hash function.",
+          "Explain R and A algorithm and encrypt given parameters."
+        ],
+        "3": [
+          "Principal differences between Kerberos v4 and v5.",
+          "Parameters defining an SSL session state.",
+          "Difference between tunnel mode and transport mode.",
+          "Services provided by IPsec."
+        ],
+        "4": [
+          "Draw generic transmission diagram in PGP.",
+          "How does a worm propagate?",
+          "Testing to guard against CSS attacks.",
+          "Role of compression in virus operation."
+        ],
+        "5": [
+          "Benefits of intrusion detection systems.",
+          "Weaknesses of packet filtering routers and solutions.",
+          "Working of application level gateway.",
+          "Classes of intruders."
+        ]
+      },
+      "2013": {
+        "1": [
+          "Difference between passive and active security threats.",
+          "Keys required for two people to communicate via a cipher.",
+          "Program for general Caesar cipher.",
+          "Parameters and design choices of Feistel cipher; purpose of S-boxes in DES."
+        ],
+        "2": [
+          "Difference between modular and ordinary arithmetic; classes of polynomial arithmetic.",
+          "Applications of public-key cryptosystems.",
+          "Elliptic curve and zero point.",
+          "Digital signature standards."
+        ],
+        "3": [
+          "Problems with clean text passwords.",
+          "Preventing misuse of certificates.",
+          "Security handshake pitfalls.",
+          "Kerberos and its working."
+        ],
+        "4": [
+          "Explain SQL injection and its web-specific nature.",
+          "Difference between circuit gateway and application gateway.",
+          "Phishing and prevention techniques.",
+          "Firewalls and their role in network security."
+        ],
+        "5": [
+          "Hardware/software cryptographic requirements.",
+          "Difference among viruses, worms, and malware.",
+          "Leased line vs. VPN.",
+          "Characteristics of a good firewall."
+        ]
+      },
+      "2014": {
+        "1": [
+          "Importance of confidentiality.",
+          "Difference between worm and virus.",
+          "Plaintext and monoalphabetic cipher security.",
+          "Symmetric vs. asymmetric cryptography."
+        ],
+        "2": [
+          "Initialization Vector (IV) and its significance.",
+          "Trust in digital signatures.",
+          "Digital envelopes combining symmetric/asymmetric cryptography.",
+          "RSA vs. Elliptic Curve Cryptography."
+        ],
+        "3": [
+          "Certification authority hierarchy and self-signed certificates.",
+          "SSL layer positioning.",
+          "Preventing certificate misuse.",
+          "Kerberos and its working."
+        ],
+        "4": [
+          "Passive vs. active attacks.",
+          "Phishing-prevention techniques.",
+          "Main attacks on corporate networks.",
+          "SQL injection attacks and prevention."
+        ],
+        "5": [
+          "Firewall limitations; tunnel mode significance.",
+          "Screened host firewall types.",
+          "Cookies and privacy risks.",
+          "Audit records in intrusion detection."
+        ]
+      },
+      "2015": {
+        "1": [
+          "Compare OFB and CFB modes.",
+          "Basic principles of information security.",
+          "DES Encryption block diagram.",
+          "Types of cryptanalysis attacks."
+        ],
+        "2": [
+          "Conventional vs. public key encryption.",
+          "Short notes on RSA.",
+          "Hash functions.",
+          "Diffie-Hellman key exchange."
+        ],
+        "3": [
+          "Transport vs. tunnel mode.",
+          "Secure Socket Layer (SSL).",
+          "TLS alert codes.",
+          "IP security."
+        ],
+        "4": [
+          "Cross-site scripting and phishing attacks.",
+          "Software threats."
+        ],
+        "5": [
+          "Intrusion detection, Packet filters, URL, Web security problems, Cookies."
+        ]
+      },
+      "2016": {
+        "1": [
+          "Difference between diffusion and confusion.",
+          "Purpose of S-boxes in DES.",
+          "Avalanche effect.",
+          "Playfair and polyalphabetic ciphers."
+        ],
+        "2": [
+          "Euler's totient function.",
+          "Applications of public-key cryptosystems.",
+          "Factoring problem in RSA.",
+          "Diffie-Hellman key exchange example."
+        ],
+        "3": [
+          "Kerberos realm.",
+          "Kerberos v4 vs. v5.",
+          "Chain of certificate.",
+          "SSL/TLS and IP security."
+        ],
+        "4": [
+          "Phishing attack types.",
+          "Virus types.",
+          "Viruses vs. worms.",
+          "Format string and SQL injection attacks."
+        ],
+        "5": [
+          "Access control importance.",
+          "URL definition.",
+          "HTTP vs. HTTPS.",
+          "Firewall types and packet filtering diagram."
+        ]
+      },
+      "2020": {
+        "1": [
+          "Definition and layers of security.",
+          "Critical characteristics of information."
+        ],
+        "2": [
+          "Purpose of S-boxes in DES; avalanche effect.",
+          "Steganography vs. cryptography."
+        ],
+        "3": [
+          "SQL injection, phishing, ransomware attacks."
+        ],
+        "4": [
+          "Diffusion vs. confusion with examples."
+        ],
+        "5": [
+          "Hash functions and their secure characteristics.",
+          "Euclidean algorithm for gcd(1970, 1066)."
+        ],
+        "6": [
+          "Cipher, Plaintext, Cryptology, Cryptanalysis, Integrity, Availability."
+        ],
+        "7": [
+          "Email security, Penetration testing.",
+          "Transport Layer Security (TLS)."
+        ],
+        "8": [
+          "Firewalls, Eavesdropping, Diffie-Hellman, Web security."
+        ]
+      },
+      "2018": {
+        "1": [
+          "Substitution vs. transposition ciphers.",
+          "Linear and differential cryptanalysis."
+        ],
+        "2": [
+          "S-boxes in DES; avalanche effect.",
+          "Steganography vs. cryptography."
+        ],
+        "3": [
+          "Diffie-Hellman key exchange.",
+          "Hash functions and their uses."
+        ],
+        "4": [
+          "Digital signature approaches.",
+          "Kerberos architecture."
+        ],
+        "5": [
+          "SQL injection, phishing, ransomware attacks."
+        ],
+        "6": [
+          "Virus, intruders, worms; intrusion detection principles.",
+          "Firewall design principles."
+        ],
+        "7": [
+          "Integrity, Confidentiality, Denial of Service, Authentication.",
+          "SSL architecture."
+        ],
+        "8": [
+          "IP spoofing, Brute force attack, DES strength, RSA encryption."
+        ]
+      },
+      "2023": {
+        "2": [
+          "Hashing benefits; public key infrastructure components.",
+          "Cross-site scripting (XSS)."
+        ],
+        "4": [
+          "Viruses, worms, and virus types."
+        ],
+        "5": [
+          "Short notes: IDS, Encrypted tunnel, Cookies, HTTP."
+        ]
+      }
+    }
+  }
+}

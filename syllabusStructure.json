@@ -1,0 +1,82 @@
+{
+    "SubjectMapper": {
+    "1": [
+      "Basic of Cryptography",
+      "Secret key cryptography",
+      "Types of attack",
+      "Substitution ciphers",
+      "Transposition ciphers",
+      "Block ciphers and stream ciphers",
+      "Confusion and Diffusion",
+      "Data encryption standard",
+      "Round function",
+      "Modes of operation",
+      "Cryptanalysis",
+      "Brute force attack",
+      "Security Goals (Confidentiality, Integrity, Availability)"
+    ],
+    "2": [
+      "Public key Cryptography",
+      "Modulo arithmetic",
+      "Greatest common divisor",
+      "Euclidean algorithm",
+      "RSA algorithm",
+      "Hash function",
+      "Attack on collision resistance",
+      "Diffie-Hellman key exchange",
+      "Digital signature standard",
+      "Elliptic curve cryptography"
+    ],
+    "3": [
+      "Authentication: One-way Authentication",
+      "Password-based authentication",
+      "Certificate-based authentication",
+      "Mutual Authentication",
+      "Shared secret-based authentication",
+      "Asymmetric-based authentication",
+      "Authentication and key agreement",
+      "Centralized Authentication",
+      "Eavesdropping",
+      "Kerberos",
+      "IP security overview",
+      "Security association & Encapsulating security payload",
+      "Tunnel and transfer modes",
+      "Internet key exchange protocol",
+      "Secure Socket Layer (SSL)",
+      "Transport Layer Security (TLS)"
+    ],
+    "4": [
+      "Software vulnerabilities",
+      "Phishing Attacks",
+      "Buffer overflow vulnerability",
+      "Format String attack",
+      "Cross Site Scripting",
+      "SQL injection Attacks",
+      "Email security",
+      "Security services of E-mail",
+      "Establishing keys",
+      "Privacy",
+      "Authentication of the source",
+      "Message integrity",
+      "Non-Repudiation",
+      "Viruses",
+      "Worms",
+      "Malware"
+    ],
+    "5": [
+      "Web Issues",
+      "Uniform Resource Locator/URI",
+      "HTTP",
+      "Cookies",
+      "Web security problem",
+      "Penetration Testing",
+      "Firewalls",
+      "Functionality, Polices and Access Control",
+      "Packet filters",
+      "Application level gateway",
+      "Encrypted tunnel",
+      "Security architecture",
+      "Introduction to intrusion detection system"
+    ]
+  }
+}

@@ -55,9 +55,8 @@ async def main():
     destination_folder = "Output"
     subjects = {
         "it": {
-            "701": "soft computing",
-            "802": "soft computing",
-            "8002": "soft computing",
+            "801":"information security",
+            "8001":"information security"
         },
     }
     selected_branches = ["it"]
